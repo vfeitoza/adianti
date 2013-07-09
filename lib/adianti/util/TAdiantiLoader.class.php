@@ -35,7 +35,8 @@ class TAdiantiLoader
      */
     static function autoload($class, $toolkit = 'web')
     {
-        $folders = array('lib/adianti/widget/' . $toolkit,
+        $folders = array('app/lib', 
+                         'lib/adianti/widget/' . $toolkit,
                          'lib/adianti/database',
                          'lib/adianti/control',
                          'lib/adianti/util',

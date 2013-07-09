@@ -2,10 +2,11 @@
 /**
  * Scrolled Window: Allows to add another containers inside, creating scrollbars when its content is bigger than its visual area
  * 
- * @version    1.0
+ * @version    1.1 2013-07-09
  * @package    widget_web
  * @subpackage container
  * @author     Pablo Dall'Oglio
+ * @author     Victor Feitoza <vfeitoza [at] gmail.com>
  * @copyright  Copyright (c) 2006-2013 Adianti Solutions Ltd. (http://www.adianti.com.br)
  * @license    http://www.adianti.com.br/framework-license
  */

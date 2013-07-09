@@ -1,0 +1,12 @@
+.tmessage
+{
+    position       : fixed;
+    font-family    : sans-serif,arial,verdana;
+    font-size      : 10pt;
+    visibility     : hidden;
+    color          : black;
+    align          : center;
+    vertical-align : middle;
+    z-index        : 3000;
+    overflow       : none;
+}

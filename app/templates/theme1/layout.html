@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adianti Framework :: Samples</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {LIBRARIES}
+    {HEAD}
+    <script type="text/javascript">
+    $('[generator="adianti"]').live('click', function()
+    {
+       __adianti_load_page($(this).attr('href'));
+       return false;
+    });
+    
+    window.onpopstate = function(stackstate)
+    {
+    	if (stackstate.state)
+    	{
+    		__adianti_load_page_no_register(stackstate.state.url);
+    	}
+    };
+    
+    $(function() {
+        $( document ).tooltip();
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div style="position:relative; text-align:left; float:left; width: 30%;"><img style="margin-left:10px;margin-top:8px" src="app/templates/{template}/images/adianti.png"></div>
+            <div style="position:relative; text-align:center; float:left; width: 40%;"><span class="title">Adianti Framework</span></div>
+            <div style="position:relative; text-align:right; float:right; width: 30%;"><img src="app/templates/{template}/images/framework.png"></div>
+        </div>
+        
+        <div class="body">
+            <div id="menuDiv">
+                <div class="navbar">
+                  <div class="navbar-inner">
+                    {MENU}
+                  </div>
+                </div>
+            </div>
+
+            <div id="adianti_div_content" class="content"></div>
+            <div id="adianti_online_content"></div>
+            <div id="pageboth"><br></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <script type="text/javascript">
+    //#javascript_placeholder#
+    </script>
+</body>
+</html>

@@ -3,20 +3,43 @@
  * TAccordion Container
  * Copyright (c) 2006-2010 Pablo Dall'Oglio
  * @author  Pablo Dall'Oglio <pablo [at] adianti.com.br>
- * @version 2.0, 2007-08-01
+ * @author  Victor Feitoza <vfeitoza [at] gmail.com>
+ * @version 2.1, 2013-07-09
  */
 class TAccordion extends TElement
 {
     protected $elements;
+    private $autoHeight = NULL;
+    private $useDialog = false;
     
     /**
      * Class Constructor
      */
-    public function __construct()
+    public function __construct($id = NULL)
     {
         parent::__construct('div');
-        $this->id = 'taccordion_' . uniqid();
+        if ($id)
+        {
+            $this->id = 'taccordion_' . $id;
+            $this->useDialog = true;
+        }
+        else
+        {
+            $this->id = 'taccordion_' . uniqid();
+        }
         $this->elements = array();
+    }
+    
+    /**
+     * Add auto height in to accordion
+     * @param $bool TRUE to auto height
+     */
+    public function setAutoHeight($bool)
+    {
+        if ($bool)
+        {
+            $this->autoHeight = '{ autoHeight: true }';
+        }
     }
     
     /**
@@ -50,12 +73,15 @@ class TAccordion extends TElement
     	$script->{'type'} = 'text/javascript';
     	$code = '
             $(document).ready( function() {
-                $( "#'.$this->id.'" ).accordion();
+                $( "#'.$this->id.'" ).accordion('.$this->autoHeight.');
             });
             ';
         $script->add($code);
-        
-        parent::add($script);
+
+        if (!$this->useDialog)
+        {
+             parent::add($script);
+        }
         parent::show();
     }
 }

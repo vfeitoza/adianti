@@ -87,12 +87,12 @@ class TEntry extends TField
             {
                 TPage::include_js('app/lib/include/jquery.meiomaskmoney.js');
                 
-                if ($this->mask == 'money')
+                if ($this->mask == 'msk:money')
                 {
                     $this->tag->{'class'} = 'tfield money';
                     $this->tag->{'id'} = $this->name;
                 }
-                else if ($this->mask == 'decimal')
+                else if ($this->mask == 'msk:decimal')
                 {
                     $this->tag->{'class'} = 'tfield decimal';
                     $this->tag->{'id'} = $this->name;
